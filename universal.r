@@ -52,7 +52,7 @@ library(gprofiler2)
 
 ############# read in arguments #############
 args <- commandArgs(trailingOnly = TRUE)
-print("teeeeeeeesttttt--------------testtesttesttesttesttesttesttesttest")
+#print("teeeeeeeesttttt--------------testtesttesttesttesttesttesttesttest")
 if (length(args) < 3) {
 
     stop("Usage: Rscript universal.r savepath path2data path2meta algorithms(optional: 'base', 'extra' or 'all') min_size(optional) protein_mapping(optional) timepoint(optional)", call.=FALSE)
