@@ -13,7 +13,7 @@ if (!require("BiocManager", quietly = TRUE))
 
 if (!require("mosbi", quietly = TRUE))
     BiocManager::install("mosbi")
-
+print("hat geklappt")
 #################################################### DISCLAIMER ####################################################
 # All passages that may need to be adjusted are marked with a (*).
 # Please adjust them according to your data.
