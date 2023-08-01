@@ -13,7 +13,6 @@ if (!require("BiocManager", quietly = TRUE))
 
 if (!require("mosbi", quietly = TRUE))
     BiocManager::install("mosbi")
-print("hat geklappt")
 #################################################### DISCLAIMER ####################################################
 # All passages that may need to be adjusted are marked with a (*).
 # Please adjust them according to your data.
@@ -53,7 +52,7 @@ library(gprofiler2)
 
 ############# read in arguments #############
 args <- commandArgs(trailingOnly = TRUE)
-
+print(length(args))
 if (length(args) < 3) {
 
     stop("Usage: Rscript universal.r savepath path2data path2meta algorithms(optional: 'base', 'extra' or 'all') min_size(optional) protein_mapping(optional) timepoint(optional)", call.=FALSE)
