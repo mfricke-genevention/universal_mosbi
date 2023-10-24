@@ -29,7 +29,9 @@ process mosbi {
     path "Rplots.pdf"
 
     """
-    Rscript $script_file $count_file $meta_file ./
+    //Rscript $script_file $count_file $meta_file ./
+    Rscript $script_file
+
     """
 }
 
