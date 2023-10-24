@@ -7,9 +7,10 @@ params.min_size = 3
 params.timepoint = true 
 params.protein_mapping = true 
 
-script_file = Channel.fromPath("universal.r")
 meta_file = Channel.fromPath(params.meta_file)
 count_file = Channel.fromPath("${params.input}/${params.count_file}")
+script_file = Channel.fromPath("universal.r")
+
 
 
 process mosbi {
