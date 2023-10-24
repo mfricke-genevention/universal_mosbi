@@ -20,7 +20,7 @@ process mosbi {
     input:
     path count_file
     path meta_file
-    path "universal.r"
+    path script_file
 
 
     output:
