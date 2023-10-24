@@ -25,11 +25,11 @@ process mosbi {
     path "Rplots.pdf"
 
     """
-    Rscript universal.r ./ $count_file $meta_file $params.algrorithm $params.min_size $protein_mapping $timepoint
+    Rscript universal.r $count_file $meta_file ./ $params.algrorithm $params.min_size $protein_mapping $timepoint
     """
 }
 
 
 workflow {
-  mosbi(universal_mosbi, count_file, meta_file, gene_mapping)
+  mosbi(count_file, meta_file)
 }
