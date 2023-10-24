@@ -36,6 +36,5 @@ process thatsatest {
 
 
 workflow {
-  //mosbi(universal_mosbi_r, count_file, meta_file, gene_mapping)
   thatsatest
 }
