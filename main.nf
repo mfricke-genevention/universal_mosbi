@@ -31,5 +31,5 @@ process mosbi {
 
 
 workflow {
-  mosbi(universal_mosbi_r, count_file, meta_file, gene_mapping)
+  mosbi(universal_mosbi, count_file, meta_file, gene_mapping)
 }
