@@ -9,6 +9,8 @@ params.protein_mapping = true
 
 meta_file = Channel.fromPath("${params.input}/${params.meta_file}")
 count_file = Channel.fromPath("${params.input}/${params.count_file}")
+script_file = Channel.fromPath("universal.r")
+
 
 process mosbi {
     container "bioandre/mosbi_container" // use docker conatainer
@@ -18,6 +20,8 @@ process mosbi {
     input:
     path count_file
     path meta_file
+    path "universal.r"
+
 
     output:
     path "community*"
@@ -31,5 +35,5 @@ process mosbi {
 
 
 workflow {
-  mosbi(count_file, meta_file)
+  mosbi(script_file, count_file, meta_file)
 }
