@@ -30,7 +30,7 @@ process mosbi {
     //path "GraphML_*"
     //path "Rplots.pdf"
 
-    file('current_lol.txt').withWriter { writer ->
+    file('current_lol2.txt').withWriter { writer ->
     writer.println "Script file: ${script_file}"
 }
 
