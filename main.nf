@@ -23,7 +23,7 @@ process mosbi {
     path script_file
     path count_file
     path meta_file
-    //    Rscript $script_file $count_file $meta_file ./
+    
 
 
 
@@ -34,6 +34,7 @@ process mosbi {
 
     """
     pwd > current_directory.txt
+    Rscript $script_file $count_file $meta_file ./
     """
 }
 
