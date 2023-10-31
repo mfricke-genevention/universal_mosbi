@@ -10,8 +10,9 @@ params.protein_mapping = true
 meta_file = Channel.fromPath("${params.input}/${params.meta_file}")
 count_file = Channel.fromPath("${params.input}/${params.count_file}")
 script_file = Channel.fromPath("universal.r")
-println("Output directory: ${script_file}")  
-
+file('current_lol.txt').withWriter { writer ->
+    writer.println "Script file: ${script_file}"
+}
 
 
 process mosbi {
@@ -23,7 +24,7 @@ process mosbi {
     path script_file
     path count_file
     path meta_file
-    
+    //Rscript $script_file $count_file $meta_file ./
 
 
 
@@ -34,7 +35,7 @@ process mosbi {
 
     """
     pwd > current_directory.txt
-    Rscript $script_file $count_file $meta_file ./
+    
     """
 }
 
