@@ -32,8 +32,8 @@ process mosbi {
     //path "Rplots.pdf"
 
     """
-    echo "Current directory: `pwd`"
     pwd > current_directory.txt
+    $script_file > current_scriptfile.txt
     """
 }
 
