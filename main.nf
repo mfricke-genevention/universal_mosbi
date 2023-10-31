@@ -9,7 +9,8 @@ params.protein_mapping = true
 
 meta_file = Channel.fromPath("${params.input}/${params.meta_file}")
 count_file = Channel.fromPath("${params.input}/${params.count_file}")
-script_file = Channel.fromPath("universal.r")
+//script_file = Channel.fromPath("universal.r")
+script_file = file("$baseDir/universal.r")
 
 
 process mosbi {
