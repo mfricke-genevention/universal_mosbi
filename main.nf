@@ -21,8 +21,7 @@ process mosbi {
     path script_file
     path count_file
     path meta_file
-    //Rscript $script_file $count_file $meta_file ./
-
+    //
     
 
     //output:
@@ -30,14 +29,11 @@ process mosbi {
     //path "GraphML_*"
     //path "Rplots.pdf"
 
-    file('current_lol2.txt').withWriter { writer ->
-    writer.println "Script file: ${script_file}"
-}
-
+   
 
     """
     pwd > current_directory.txt
-    
+    Rscript $script_file $count_file $meta_file ./
     """
 }
 
