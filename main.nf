@@ -33,6 +33,7 @@ process mosbi {
 
     """
     echo "Current directory: `pwd`"
+    pwd > current_directory.txt
     """
 }
 
