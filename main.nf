@@ -30,6 +30,7 @@ process mosbi {
     path "Rplots.pdf"
 
     """
+    echo "Current directory: $(pwd)"
     Rscript $script_file $count_file $meta_file ./
 
     """
