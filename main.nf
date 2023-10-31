@@ -19,9 +19,9 @@ process mosbi {
     publishDir params.output, mode: "copy"
 
     input:
+    path script_file
     path count_file
     path meta_file
-    path script_file
 
 
     output:
