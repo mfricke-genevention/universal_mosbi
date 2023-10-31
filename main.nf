@@ -11,6 +11,10 @@ meta_file = Channel.fromPath("${params.input}/${params.meta_file}")
 count_file = Channel.fromPath("${params.input}/${params.count_file}")
 //script_file = Channel.fromPath("universal.r")
 script_file = file("$baseDir/universal.r")
+file('paramsmeta_file.txt').withWriter { writer ->
+    writer.println "params.meta_file: ${params.meta_file}"
+    writer.println "params.input: ${params.input}"
+}
 
 
 process mosbi {
