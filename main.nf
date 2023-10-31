@@ -34,7 +34,6 @@ process mosbi {
 
     """
     pwd > current_directory.txt
-    $script_file > current_scriptfile.txt
     """
 }
 
