@@ -108,6 +108,7 @@ if (timepoint != FALSE){
     datamatrix <- datamatrix[,time]
 }
 
+quit(save = "no")
 
 
 ########################## run bicluster algorithms #######################
