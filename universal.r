@@ -178,7 +178,6 @@ return(all_bics)
 algos <- "all"
 all_bics <- algo(algos, datamatrix)
 
-quit(save = "no")
 
 
 ########################## compute bicluster network #######################
@@ -367,6 +366,7 @@ GraphML_bic_net <- biclust2igraph(bic_net)
 
 # load all meta information into igraph object
 GraphML_bic_net <- loadColor(GraphML_bic_net)
+quit(save = "no")
 
 # save igraph object as graphml
 path <- paste0(savepath,"/bicluster_network.graphml")
