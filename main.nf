@@ -10,7 +10,7 @@ params.protein_mapping = true
 //meta_file = Channel.fromPath("${params.input}/${params.meta_file}")
 meta_file = Channel.fromPath("${params.meta_file}")
 
-//count_file = Channel.fromPath("${params.input}/${params.count_file}")
+//count_file = Channel.fromPath("${params.input}/${params.count_file}")//
 count_file = Channel.fromPath("${params.count_file}")
 
 //script_file = Channel.fromPath("universal.r")
