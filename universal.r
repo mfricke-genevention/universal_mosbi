@@ -370,9 +370,7 @@ GraphML_bic_net <- loadColor(GraphML_bic_net)
 # save igraph object as graphml
 path <- paste0(savepath,"/bicluster_network2.graphml")
 write_graph(GraphML_bic_net, path, format = "graphml")
-write_graph(GraphML_bic_net, "bicluster_network1.graphml", format = "graphml")
 
-quit(save = "no")
 
 
 ########################## get and save communities #######################
