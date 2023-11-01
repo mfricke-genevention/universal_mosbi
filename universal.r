@@ -108,7 +108,6 @@ if (timepoint != FALSE){
     datamatrix <- datamatrix[,time]
 }
 
-quit(save = "no")
 
 
 ########################## run bicluster algorithms #######################
@@ -179,6 +178,7 @@ return(all_bics)
 algos <- "all"
 all_bics <- algo(algos, datamatrix)
 
+quit(save = "no")
 
 
 ########################## compute bicluster network #######################
