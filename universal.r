@@ -368,9 +368,9 @@ GraphML_bic_net <- biclust2igraph(bic_net)
 GraphML_bic_net <- loadColor(GraphML_bic_net)
 
 # save igraph object as graphml
-path <- paste0(savepath,"/bicluster_network.graphml")
-#write_graph(GraphML_bic_net, path, format = "graphml")
-write_graph(GraphML_bic_net, "bicluster_network.graphml", format = "graphml")
+path <- paste0(savepath,"/bicluster_network2.graphml")
+write_graph(GraphML_bic_net, path, format = "graphml")
+write_graph(GraphML_bic_net, "bicluster_network1.graphml", format = "graphml")
 
 quit(save = "no")
 
