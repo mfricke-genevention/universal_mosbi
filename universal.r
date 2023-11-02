@@ -206,7 +206,6 @@ bic_net <- mosbi::bicluster_network(all_bics, # List of biclusters
 )
 
 
-min_size <- 3
 coms <- mosbi::get_louvain_communities(bic_net,
     min_size = min_size,
     bics = all_bics
