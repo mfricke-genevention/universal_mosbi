@@ -39,9 +39,9 @@ process mosbi {
 
     """
     if [ ${params.protein_mapping} != false ]; then
-        Rscript $script_file ./ $count_file $meta_file ${params.algorithm} ${params.min_size} ${params.protein_mapping} ${params.timepoint}
+        Rscript $script_file ./ $count_file $meta_file "extra" 20
     else
-        Rscript $script_file ./ $count_file $meta_file $params.algorithm 20
+        Rscript $script_file ./ $count_file $meta_file "extra" 20
     fi
     """
 }
