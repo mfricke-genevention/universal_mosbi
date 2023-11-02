@@ -27,10 +27,6 @@ process mosbi {
     path script_file
     path count_file
     path meta_file
-    algo
-    min_size
-    protein_mapping
-    timepoint
 
     
 
@@ -45,7 +41,7 @@ process mosbi {
     if [ ${params.protein_mapping} != false ]; then
         Rscript $script_file ./ $count_file $meta_file ${params.algorithm} ${params.min_size} ${params.protein_mapping} ${params.timepoint}
     else
-        Rscript $script_file ./ $count_file $meta_file $algo $min_size
+        Rscript $script_file ./ $count_file $meta_file $params.algorithm $params.min_size
     fi
     """
 }
