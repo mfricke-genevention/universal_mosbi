@@ -38,7 +38,7 @@ process mosbi {
    
 
     """
-    Rscript $script_file ./ $count_file $meta_file
+    Rscript $script_file ./ $count_file $meta_file ${params.algrorithm} ${params.min_size} ${params.protein_mapping} ${params.timepoint}
     """
 }
 
