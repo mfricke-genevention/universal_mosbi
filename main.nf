@@ -5,7 +5,7 @@ params.count_file = "data_withoutGenes.csv"
 params.algorithm = "base" //"extra" or "all"
 params.min_size = 20
 params.timepoint = ""
-params.protein_mapping = false 
+params.protein_mapping = "" 
 
 meta_file = Channel.fromPath("${params.meta_file}")
 
