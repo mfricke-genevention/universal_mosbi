@@ -7,13 +7,10 @@ params.min_size = 3
 params.timepoint = true 
 params.protein_mapping = true 
 
-//meta_file = Channel.fromPath("${params.input}/${params.meta_file}")
 meta_file = Channel.fromPath("${params.meta_file}")
 
-//count_file = Channel.fromPath("${params.input}/${params.count_file}")//
 count_file = Channel.fromPath("${params.count_file}")
 
-//script_file = Channel.fromPath("universal.r")
 script_file = file("$baseDir/universal.r")
 file('paramsmeta_file.txt').withWriter { writer ->
     writer.println "params.meta_file: ${params.meta_file}"
@@ -30,14 +27,13 @@ process mosbi {
     path script_file
     path count_file
     path meta_file
-    //    pwd > current_directory.txt
 
     
 
-    output:
-    path "community*"
-    path "GraphML_*"
-    path "Rplots.pdf"
+    // output:
+    // path "community*"
+    // path "GraphML_*"
+    // path "Rplots.pdf"
 
    
 
