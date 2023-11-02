@@ -87,8 +87,10 @@ if (length(args) == 7){
 }
 
 
-min_size <- 20
+min_size <- 50
 
+parameters <- paste(savepath, data, meta, algos, min_size, path2mapping, timepoint, sep = "_")
+writeLines(parameters, "parameters.txt")
 
 ############# read in data and meta data (*) #############
 
