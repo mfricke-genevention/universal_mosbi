@@ -86,6 +86,10 @@ if (length(args) == 7){
     
 }
 
+
+min_size <- 20
+
+
 ############# read in data and meta data (*) #############
 
 #(*) May need to be adjusted. The test data have the gene names in the 1st column and the protein IDs in the 2nd column.
