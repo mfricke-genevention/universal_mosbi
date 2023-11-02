@@ -48,5 +48,6 @@ process mosbi {
 
 
 workflow {
-  mosbi(script_file, count_file, meta_file , params.algorithm, params.min_size, params.protein_mapping, params.timepoint)
+  //mosbi(script_file, count_file, meta_file , params.algorithm, params.min_size, params.protein_mapping, params.timepoint)
+  mosbi(script_file, count_file, meta_file)
 }
