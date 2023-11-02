@@ -42,6 +42,7 @@ process mosbi {
         Rscript $script_file ./ $count_file $meta_file ${params.algorithm} ${params.min_size} ${params.protein_mapping} ${params.timepoint}
     else
         Rscript $script_file ./ $count_file $meta_file ${params.algorithm} ${params.min_size}
+    fi
     """
 }
 
