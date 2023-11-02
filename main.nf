@@ -31,7 +31,7 @@ process mosbi {
     
 
     // output:
-    // path "community*"
+    // path "community*" lllloooooooo
     // path "GraphML_*"
     // path "Rplots.pdf"
 
