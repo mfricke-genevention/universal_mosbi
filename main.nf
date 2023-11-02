@@ -2,10 +2,10 @@ params.output = "./output/"
 params.input = "./example/"
 params.meta_file = "columnDescription.txt"
 params.count_file = "data_withoutGenes.csv"
-params.algrorithm = "base" //"extra" or "all"
+params.algorithm = "base" //"extra" or "all"
 params.min_size = 3
-params.timepoint = true 
-params.protein_mapping = true 
+params.timepoint = ""
+params.protein_mapping = false 
 
 meta_file = Channel.fromPath("${params.meta_file}")
 
@@ -38,7 +38,10 @@ process mosbi {
    
 
     """
-    Rscript $script_file ./ $count_file $meta_file ${params.algrorithm} ${params.min_size} ${params.protein_mapping} ${params.timepoint}
+    if [ ${params.protein_mapping} != false ]; then
+        Rscript $script_file ./ $count_file $meta_file ${params.algorithm} ${params.min_size} ${params.protein_mapping} ${params.timepoint}
+    else
+        Rscript $script_file ./ $count_file $meta_file ${params.algorithm} ${params.min_size}
     """
 }
 
