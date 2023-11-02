@@ -3,7 +3,7 @@ params.input = "./example/"
 params.meta_file = "columnDescription.txt"
 params.count_file = "data_withoutGenes.csv"
 params.algorithm = "base" //"extra" or "all"
-params.min_size = 3
+params.min_size = 20
 params.timepoint = ""
 params.protein_mapping = false 
 
