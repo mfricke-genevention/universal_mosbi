@@ -12,9 +12,9 @@ file_list = params.count_files.tokenize(",")
 file_channels = Channel.fromPath(file_list).collect()
 
 // scripts
-mosbi_script = Channel.fromPath("${projectDir}/universal.r")
-join_table = Channel.fromPath("${projectDir}/join_table.py")
-metadata2table = Channel.fromPath("${projectDir}/metadata2table.py")
+mosbi_script = Channel.fromPath("${projectDir}/scripts/universal.r")
+join_table = Channel.fromPath("${projectDir}/scripts/join_table.py")
+metadata2table = Channel.fromPath("${projectDir}/scripts/metadata2table.py")
 
 // config files
 data_config = Channel.fromPath("${projectDir}/config/data_table_config.json")
