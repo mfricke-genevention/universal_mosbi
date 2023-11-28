@@ -37,10 +37,12 @@ pipelines:
     paramDescription: minimum size
     paramKey: --min_size
     paramType: Number
+    isMultiValue: false
     isRequired: false
 
   - paramName: Algorithm
     paramDescription: algorithm "base", "extra" or "all"
     paramKey: --algorithm
     paramType: Text
+    isMultiValue: false
     isRequired: false
