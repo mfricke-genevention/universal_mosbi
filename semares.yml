@@ -1,0 +1,45 @@
+pipelines:
+- pipelineName: mosbi_analysis v.1.0
+  pipelineDescription: "Biclustering algorithms on omics data in combination with a novel ensemble approach to find molecular signatures in the data. This can yield to new insights of the data, which go further than traditional clustering, where only one dimension is considered."
+  pipelineCommand: nextflow run
+
+  pipelineParams:
+  - paramName: Output Folder Path
+    paramKey: --output
+    paramDescription: Output folder path to store the result
+    paramType: OutputPath
+    isMultiValue: false
+    isRequired: true
+
+  - paramName: Metadata
+    paramDescription: metadata file
+    paramKey: --meta_file
+    paramType: InputPath
+    isMultiValue: false
+    isRequired: true
+
+  - paramName: CountData
+    paramDescription: count data file
+    paramKey: --count_files
+    paramType: InputPath
+    isMultiValue: true
+    isRequired: true
+
+  - paramName: ProteinMapping
+    paramDescription: protein mapping file
+    paramKey: --protein_mapping
+    paramType: InputPath
+    isMultiValue: false
+    isRequired: true
+
+  - paramName: MinSize
+    paramDescription: minimum size
+    paramKey: --min_size
+    paramType: Number
+    isRequired: false
+
+  - paramName: Algorithm
+    paramDescription: algorithm "base", "extra" or "all"
+    paramKey: --algorithm
+    paramType: Text
+    isRequired: false
