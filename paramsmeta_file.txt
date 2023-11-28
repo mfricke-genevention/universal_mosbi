@@ -1,2 +1,0 @@
-params.meta_file: ./example/columnDescription.txt
-params.input: ./example/

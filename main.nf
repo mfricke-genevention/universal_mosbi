@@ -11,12 +11,14 @@ metadata = Channel.fromPath(params.meta_file)
 file_list = params.count_files.tokenize(",")
 file_channels = Channel.fromPath(file_list).collect()
 
-// local files
+// scripts
 mosbi_script = Channel.fromPath("${projectDir}/universal.r")
 join_table = Channel.fromPath("${projectDir}/join_table.py")
-data_config = Channel.fromPath("${projectDir}/data_table_config.json")
 metadata2table = Channel.fromPath("${projectDir}/metadata2table.py")
-meta_data_config = Channel.fromPath("${projectDir}/meta_table_config.json")
+
+// config files
+data_config = Channel.fromPath("${projectDir}/config/data_table_config.json")
+meta_data_config = Channel.fromPath("${projectDir}/config/meta_table_config.json")
 
 process file_join {
     container "dockergenevention/pandas" // use docker conatainer
