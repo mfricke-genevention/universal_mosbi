@@ -47,12 +47,13 @@ process metadata_join {
     path script
     path metadata
     path config
+    val file_path
 
     output:
     path "output/metadata.tsv"
 
     """
-    python $script -m $metadata -c $config
+    python $script -m $metadata -c $config -p $file_path
     """
 }
 
@@ -78,6 +79,6 @@ process mosbi {
 
 workflow {
   file_join(join_table, metadata, data_config, file_channels, params.count_files)
-  metadata_join(metadata2table, metadata, meta_data_config)
+  metadata_join(metadata2table, metadata, meta_data_config, params.count_files)
   mosbi(mosbi_script, file_join.out, metadata_join.out, protein_mapping)
 }

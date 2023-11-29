@@ -1,9 +1,12 @@
 import json
+import time
+from unittest.mock import NonCallableMagicMock
 import pandas as pd
 import csv
 import argparse
 import sys
 import os
+
 
 def option_parser():
     parser = argparse.ArgumentParser(description="metadata2table")
@@ -11,6 +14,8 @@ def option_parser():
                         help='metadata json file', dest="metadata")
     parser.add_argument('--config', "-c",
                         help='table configuration file', dest="config")
+    parser.add_argument('--pathes', "-p",
+                        help='original pathes', dest="pathes")
     args = parser.parse_args()
 
     if len(sys.argv) < 2:
@@ -62,6 +67,9 @@ def set_timepoint_index(field, item):
                     field[field.index("$TIMEPOINT")] = i
                     timepoint_index = i
                     break
+
+        if timepoint is None:
+            raise ValueError(f"No timepoint specified in metadata")
         if timepoint_index is None:
             raise ValueError(f"Timepoint '{timepoint}' can't be resolved!")
 
@@ -74,22 +82,24 @@ def read_json_file(file_path):
         print("I/O error({0}): {1}".format(e.errno, e.strerror))
 
 
-def transform_metadata(table_config, metadata):
+def transform_metadata(table_config, metadata, file_pathes):
     metadata_list = []
     column_config = table_config.get("columns")
 
     for metadata_item in metadata:
         item = list(metadata_item.values())[0]
-        metadata_map = {}
-        for config in column_config:
-            field = config.get("field")
-            object_type = config.get("object_type")
-            header_name = config.get("header_name")
-            key_list = [object_type] + field
-            set_timepoint_index(key_list, item)
-            value = get(item, key_list)
-            metadata_map[header_name] = value
-        metadata_list.append(metadata_map)
+        key = list(metadata_item.keys())[0]
+        if key in file_pathes:
+            metadata_map = {}
+            for config in column_config:
+                field = config.get("field")
+                object_type = config.get("object_type")
+                header_name = config.get("header_name")
+                key_list = [object_type] + field
+                set_timepoint_index(key_list, item)
+                value = get(item, key_list)
+                metadata_map[header_name] = value
+            metadata_list.append(metadata_map)
     table = pd.DataFrame.from_records(metadata_list)
     write_table(table, table_config)
 
@@ -113,7 +123,7 @@ def main():
     args = option_parser()
     table_config = read_json_file(args.config)
     metadata = read_json_file(args.metadata)
-    transform_metadata(table_config, metadata)
+    transform_metadata(table_config, metadata, args.pathes)
 
 
 if __name__ == "__main__":
