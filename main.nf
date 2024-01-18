@@ -2,7 +2,7 @@ params.output = "./output/"
 params.algorithm = "base" //"extra" or "all"
 params.min_size = 20
 params.timepoint = ""
-params.protein_mapping = "./example/geneprot_mapping.csv" 
+params.protein_mapping = "" 
 params.meta_file = "./example/metadata.json"
 params.count_files = "./example/data/00/00/03/1/quantification_table.tsv,./example/data/00/00/04/1/quantification_table.tsv"
 
